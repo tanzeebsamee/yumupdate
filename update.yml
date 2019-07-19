@@ -1,0 +1,9 @@
+---
+- hosts: all
+  sudo: yes
+  tasks:
+    - name: Updating system
+      command: "{{ item }}"
+      with_items :
+       - yum update -y
+       - poweroff
